@@ -1,6 +1,14 @@
-#main {
+.main {
 	transition: margin-left 0.5s;
 	padding: 20px;
 	overflow: hidden;
 	width: 100%;
+}
+
+.main.open {
+  margin-left: 250px;
+}
+
+.main.closed {
+  margin-left: 0px;
 }

@@ -5,7 +5,7 @@
 
 .side-nav {
 	height: 100%;
-	width:0;
+	width:0px;
 	position: fixed;
 	z-index: 1;
 	top: 0;
@@ -17,6 +17,16 @@
 	transition: 0.5s;
 }
 
+.side-nav.open {
+  width: 250px;
+  transition: 0.5s;
+}
+
+.side-nav.close {
+  width: 0px;
+  transition: 0.5s;
+}
+
 .side-nav a{
 	padding: 10px 10px 10px 30px;
 	text-decoration: none;
@@ -24,7 +34,6 @@
 	color: #ccc;
 	display: block;
 	transition: 0.3s;
-
 }
 
 .side-nav a:hover {
@@ -32,7 +41,6 @@
 }
 
 .side-nav .btn-close {
-
 	position: absolute;
 	top:0;
 	right: 22px;

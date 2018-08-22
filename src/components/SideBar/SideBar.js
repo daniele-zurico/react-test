@@ -1,14 +1,22 @@
 import React from 'react';
 import './SideBar.css';
-const SideBar = () => {
+var classNames = require('classnames');
+const SideBar = (props) => {
   
-  const closeSlideMenu = () => {
+  var sideNav = classNames({
+    'side-nav': true,
+    'open': props.status,
+    'close': !props.status
+  });
+
+  if(props.status) {
+    console.log('open');
+  } else {
     console.log('close');
   }
-
   return (
-    <div id="side-menu" className='side-nav'>
-      <a href='#' className='btn-close' onClick={closeSlideMenu}>&times;</a>
+    <div id="side-menu" className={sideNav}>
+      <a href='#' className='btn-close' onClick={props.closeSlideMenu}>&times;</a>
       <a href='#'>Home</a>
       <a href='#'>About</a>
       <a href='#'>Service</a>
