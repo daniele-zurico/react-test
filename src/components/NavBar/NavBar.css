@@ -1,5 +1,5 @@
 .navbar {
-	background-color: #3b5998;
+	background-color: #f44336;
 	overflow: hidden;
 	height: 63px
 }
@@ -17,6 +17,10 @@
 .navbar ul{
 	margin: 8px 0 0 0;
 	list-style: none;
+}
+
+.navbar a:hover {
+	color: #000;
 }
 
 @media(max-width: 568px){
