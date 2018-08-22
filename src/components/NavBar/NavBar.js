@@ -1,11 +1,11 @@
 import React from 'react';
 import './NavBar.css';
 
-const NavBar = (props) => {
+const NavBar = ({openSlideMenu}) => {
   return (
     <nav className='navbar'>
       <span className='open-slide'>
-        <a href='#' onClick={props.openSlideMenu}>
+        <a href='#' onClick={openSlideMenu}>
         <svg width='30' height='30'>
           <path d='M0,5 30,5' stroke='#fff' strokeWidth='5'/>
           <path d='M0,14 30,14' stroke='#fff' strokeWidth='5'/>
