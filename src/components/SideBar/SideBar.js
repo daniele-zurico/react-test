@@ -1,8 +1,8 @@
 import React from 'react';
 import './SideBar.css';
-var classNames = require('classnames');
+import classNames from 'classnames';
 const SideBar = (props) => {
-  
+
   var sideNav = classNames({
     'side-nav': true,
     'open': props.status,
