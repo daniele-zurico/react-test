@@ -1,1 +1,47 @@
+.btn-add-expenses {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background-color: red;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  display: flex;
+  cursor: pointer;
+  padding: 0;
+}
 
+.btn-add-expenses .text {
+  color: white;
+  margin: auto;
+  font-size: 24px;
+}
+
+.btn-add-expenses:focus {outline:0;}
+
+.btn-add-expenses:disabled {
+  background-color: lightgray;
+}
+
+button {
+  border: none;
+  color: white;
+  padding: 12px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 5px;
+}
+
+button:focus {outline:0;}
+
+.primary {
+  background-color: #2196f3;
+}
+
+.warn {
+  background-color: #f44336;  
+}
