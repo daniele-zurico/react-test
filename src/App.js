@@ -8,34 +8,33 @@ import NavBar from './components/NavBar/NavBar';
 import SideBar from './components/SideBar/SideBar';
 import routes from './routes';
 class App extends Component {
-
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      showSideBar: false
-    }
+      showSideBar: false,
+    };
   }
 
   openSlideMenu = () => {
-    this.setState({showSideBar: true});
+    this.setState({ showSideBar: true });
   };
 
   closeSlideMenu = () => {
-    this.setState({showSideBar: false});
+    this.setState({ showSideBar: false });
   };
 
   render() {
-    const {showSideBar} = this.state;
+    const { showSideBar } = this.state;
     var main = classNames({
       main: true,
       open: showSideBar,
-      close: !showSideBar
+      close: !showSideBar,
     });
     return (
       <BrowserRouter>
         <React.Fragment>
-          <NavBar openSlideMenu={this.openSlideMenu}></NavBar>
-          <SideBar status={showSideBar} closeSlideMenu={this.closeSlideMenu}></SideBar>
+          <NavBar openSlideMenu={this.openSlideMenu} />
+          <SideBar status={showSideBar} closeSlideMenu={this.closeSlideMenu} />
           <div className={main}>
             <Switch>
               {routes.map((route, index) => (
@@ -46,10 +45,10 @@ class App extends Component {
                   component={route.main}
                 />
               ))}
-              <Redirect from="/" to="home"/>
+              <Redirect from="/" to="home" />
             </Switch>
           </div>
-        </React.Fragment> 
+        </React.Fragment>
       </BrowserRouter>
     );
   }
