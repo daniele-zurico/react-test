@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import classNames from 'classnames';
+import { Route, Switch, Redirect } from 'react-router-dom';
+
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import SideBar from './components/SideBar/SideBar';
-import classNames from 'classnames';
+import routes from './routes';
 class App extends Component {
 
   constructor(props){
     super(props);
-
     this.state = {
       showSideBar: false
     }
@@ -15,7 +18,6 @@ class App extends Component {
 
   openSlideMenu = () => {
     this.setState({showSideBar: true});
-    console.log('open xxx');
   };
 
   closeSlideMenu = () => {
@@ -30,14 +32,25 @@ class App extends Component {
       close: !showSideBar
     });
     return (
-      <React.Fragment>
-        <NavBar openSlideMenu={this.openSlideMenu}></NavBar>
-        <SideBar status={showSideBar} closeSlideMenu={this.closeSlideMenu}></SideBar>
-		
-        <div className={main}>
-          <h1>Responsive Slide Menu</h1>
-        </div>
-      </React.Fragment> 
+      <BrowserRouter>
+        <React.Fragment>
+          <NavBar openSlideMenu={this.openSlideMenu}></NavBar>
+          <SideBar status={showSideBar} closeSlideMenu={this.closeSlideMenu}></SideBar>
+          <div className={main}>
+            <Switch>
+              {routes.map((route, index) => (
+                <Route
+                  key={index}
+                  path={route.path}
+                  exact={route.exact}
+                  component={route.main}
+                />
+              ))}
+              <Redirect from="/" to="home"/>
+            </Switch>
+          </div>
+        </React.Fragment> 
+      </BrowserRouter>
     );
   }
 }

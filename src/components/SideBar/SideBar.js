@@ -1,6 +1,8 @@
 import React from 'react';
-import './SideBar.css';
 import classNames from 'classnames';
+import { Link } from 'react-router-dom';
+import './SideBar.css';
+
 const SideBar = ({closeSlideMenu, status}) => {
 
   var sideNav = classNames({
@@ -11,11 +13,10 @@ const SideBar = ({closeSlideMenu, status}) => {
 
   return (
     <div id="side-menu" className={sideNav}>
-      <a href='#' className='btn-close' onClick={closeSlideMenu}>&times;</a>
-      <a href='#'>Home</a>
-      <a href='#'>About</a>
-      <a href='#'>Service</a>
-      <a href='#'>Contact</a>
+      <div className='btn-close' onClick={closeSlideMenu}>&times;</div>
+      <Link to='/home'>Home</Link>
+      <Link to='/expenses'>Expenses</Link>
+      <Link to='/tags'>Tags</Link>
     </div>
   );
 }
